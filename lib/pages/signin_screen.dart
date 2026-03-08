@@ -2,8 +2,8 @@ import 'package:field_fox/shared/themes/theme.dart';
 import 'package:field_fox/widgets/button.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

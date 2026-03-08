@@ -1,20 +1,25 @@
 import 'dart:async';
 
+import 'package:field_fox/routes/route.dart';
 import 'package:flutter/material.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
 
-    Timer(Duration(seconds: 2), (() => Navigator.pushNamed(context, '/login')));
+    Timer(
+        Duration(seconds: 2),
+        (() => route.pushReplacementNamed(
+              RouteName.signin,
+            )));
 
     super.initState();
   }

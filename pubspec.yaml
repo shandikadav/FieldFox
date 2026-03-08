@@ -35,6 +35,7 @@ dependencies:
     sdk: flutter
   flutter_feather_icons: any
   flutter_staggered_grid_view: any
+  go_router: ^17.1.0
   google_fonts: ^8.0.2
 
 dev_dependencies:

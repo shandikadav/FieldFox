@@ -6,18 +6,22 @@ import 'package:field_fox/pages/favorit_page.dart';
 import 'package:field_fox/pages/futsal_page.dart';
 import 'package:field_fox/pages/gym_page.dart';
 import 'package:field_fox/pages/komunitas_page.dart';
-import 'package:field_fox/pages/login_page.dart';
+import 'package:field_fox/pages/signin_screen.dart';
 import 'package:field_fox/pages/main_page.dart';
 import 'package:field_fox/pages/menu_lapangan_page.dart';
 import 'package:field_fox/pages/notifikasi_page.dart';
 import 'package:field_fox/pages/renang_page.dart';
 import 'package:field_fox/pages/sepakbola_page.dart';
-import 'package:field_fox/pages/splash_page.dart';
+import 'package:field_fox/pages/splash_screen.dart';
 import 'package:field_fox/pages/voli_page.dart';
+import 'package:field_fox/routes/route.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -25,28 +29,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => SplashPage(),
-        '/login': (context) => MainPage(),
-        // '/register': (context) => RegisterPage(),
-        // '/mainpage': (context) => MainPage(),
-        // '/homepage': (context) => HomePage(),
-        '/lapangan': (context) => MenuLapanganPage(),
-        '/gym': (context) => GymPage(),
-        '/favorit': (context) => FavoritePage(),
-        '/komunitas': (context) => KomunitasPage(),
-        '/bantuan': (context) => BantuanPage(),
-        '/notifikasi': (context) => NotifikasiPage(),
-        '/chat': (context) => ChatPage(),
-        '/basket': (context) => BasketPage(),
-        '/futsal': (context) => FutsalPage(),
-        '/badminton': (context) => BadmintonPage(),
-        '/voli': (context) => VoliPage(),
-        '/sepakbola': (context) => SepakBolaPage(),
-        '/renang': (context) => RenangPage(),
-      },
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: true,
+      routerConfig: route,
     );
   }
 }
