@@ -120,7 +120,6 @@ class ProfilePage extends StatelessWidget {
                 //   },
                 // ), (Route route) => false);
               },
-              child: Text('Keluar'),
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -128,6 +127,7 @@ class ProfilePage extends StatelessWidget {
                 backgroundColor: Color(0xFFF58235),
                 minimumSize: Size(117, 40),
               ),
+              child: Text('Keluar'),
             )
           ],
         ),
@@ -141,6 +141,7 @@ class ProfilTile extends StatelessWidget {
   final String title;
 
   const ProfilTile({
+    super.key,
     required this.icon,
     required this.title,
   });

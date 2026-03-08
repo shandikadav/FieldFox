@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MenuLapanganPage extends StatelessWidget {
+  const MenuLapanganPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +108,8 @@ class JenisLapangan extends StatelessWidget {
   final String image;
   final String navigator;
 
-  JenisLapangan({
+  const JenisLapangan({
+    super.key,
     required this.nama,
     required this.image,
     required this.navigator,
