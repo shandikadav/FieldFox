@@ -28,15 +28,21 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bottom_nav_bar: ^1.0.3
+  cached_network_image: ^3.4.1
   carousel_slider: any
   cupertino_icons: any
   dots_indicator: any
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_dotenv: ^6.0.0
   flutter_feather_icons: any
   flutter_staggered_grid_view: any
   go_router: ^17.1.0
   google_fonts: ^8.0.2
+  persistent_bottom_nav_bar_v2: ^6.3.1
+  shared_preferences: ^2.5.4
 
 dev_dependencies:
 
