@@ -1,5 +1,5 @@
 import 'package:field_fox/shared/themes/theme.dart';
-import 'package:field_fox/widgets/button.dart';
+import 'package:field_fox/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatelessWidget {

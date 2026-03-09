@@ -1,7 +1,7 @@
-import 'package:field_fox/pages/history_page.dart';
-import 'package:field_fox/pages/homepage.dart';
-import 'package:field_fox/pages/profile_page.dart';
-import 'package:field_fox/pages/search_page.dart';
+import 'package:field_fox/ui/screens/history_page.dart';
+import 'package:field_fox/ui/screens/homepage.dart';
+import 'package:field_fox/ui/screens/profile_page.dart';
+import 'package:field_fox/ui/screens/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 

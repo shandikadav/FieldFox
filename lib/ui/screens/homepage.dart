@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:field_fox/models/daftar_lapangan.dart';
-import 'package:field_fox/pages/detail_page.dart';
+import 'package:field_fox/ui/screens/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
