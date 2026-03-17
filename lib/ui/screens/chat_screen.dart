@@ -1,53 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      backgroundColor: colorScheme.surface,
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
-        shadowColor: Colors.transparent,
         scrolledUnderElevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.all(7.0),
-          child: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Container(
-              width: 40,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withValues(alpha: 0.5),
-                    spreadRadius: 1,
-                    blurRadius: 1,
-                    offset: Offset(0, 1),
-                  ),
-                ],
-              ),
-              child: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                size: 20,
-                color: Color(0xFFF58235),
-              ),
-            ),
-          ),
-        ),
+        backgroundColor: colorScheme.surface,
+        centerTitle: true,
         title: Text(
-          'Chat',
-          style: TextStyle(color: Colors.black),
+          'Pesan',
+          style: GoogleFonts.inter(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w700,
+            color: colorScheme.onSurface,
+          ),
         ),
       ),
       body: Center(
-        child: Text('Chat Page'),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(24.w),
+                decoration: BoxDecoration(
+                  color: colorScheme.primaryContainer.withValues(alpha: 0.3),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  FeatherIcons.messageCircle,
+                  size: 64.sp,
+                  color: colorScheme.primary,
+                ),
+              ),
+              SizedBox(height: 32.h),
+              Text(
+                'Fitur Pesan Segera Hadir!',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                  fontSize: 22.sp,
+                  fontWeight: FontWeight.bold,
+                  color: colorScheme.onSurface,
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                'Sistem obrolan sedang dalam tahap pengembangan (Firebase). Ke depannya Anda akan bisa berinteraksi langsung dengan penyewa di sini.',
+                textAlign: TextAlign.center,
+                style: GoogleFonts.inter(
+                  fontSize: 14.sp,
+                  color: colorScheme.onSurfaceVariant,
+                  height: 1.5,
+                ),
+              ),
+              SizedBox(height: 64.h), // Offset bottom nav slightly
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -129,34 +129,39 @@ class _HomeScreenState extends State<HomeScreen> {
             // MOCK SEARCH BAR
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
-                  borderRadius: BorderRadius.circular(16.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color:
-                          Theme.of(context).shadowColor.withValues(alpha: 0.04),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Icon(FeatherIcons.search,
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                        size: 18.sp),
-                    SizedBox(width: 12.w),
-                    Text(
-                      'Cari lapangan basket, futsal...',
-                      style: TextStyle(
-                        color: Theme.of(context).colorScheme.onSurfaceVariant,
-                        fontSize: 13.sp,
+              child: GestureDetector(
+                onTap: () {
+                  context.pushNamed('search');
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.surface,
+                    borderRadius: BorderRadius.circular(16.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            Theme.of(context).shadowColor.withValues(alpha: 0.04),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(FeatherIcons.search,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          size: 18.sp),
+                      SizedBox(width: 12.w),
+                      Text(
+                        'Cari lapangan basket, futsal...',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                          fontSize: 13.sp,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
