@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BadmintonPage extends StatelessWidget {
-  const BadmintonPage({super.key});
+class NotifikasiScreen extends StatelessWidget {
+  const NotifikasiScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BadmintonPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: Offset(0, 1),
@@ -41,24 +41,13 @@ class BadmintonPage extends StatelessWidget {
             ),
           ),
         ),
-        title: Row(
-          children: [
-            Text(
-              'Lapangan',
-              style: TextStyle(color: Colors.black),
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              'Badminton',
-              style: TextStyle(color: Color(0xFFF58235)),
-            ),
-          ],
+        title: Text(
+          'Notifikasi',
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body: Center(
-        child: Text('Badminton Page'),
+        child: Text('Notification Page'),
       ),
     );
   }

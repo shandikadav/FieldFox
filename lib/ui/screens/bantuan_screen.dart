@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BantuanPage extends StatelessWidget {
-  const BantuanPage({super.key});
+class BantuanScreen extends StatelessWidget {
+  const BantuanScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BantuanPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: Offset(0, 1),

@@ -3,19 +3,19 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
 import 'package:field_fox/models/daftar_lapangan.dart';
-import 'package:flutter/services.dart';
+
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
-class DetailPage extends StatefulWidget {
+class DetailScreen extends StatefulWidget {
   final Lapangan lapangan;
 
-  const DetailPage({Key? key, required this.lapangan}) : super(key: key);
+  const DetailScreen({Key? key, required this.lapangan}) : super(key: key);
 
   @override
-  State<DetailPage> createState() => _DetailPageState();
+  State<DetailScreen> createState() => _DetailScreenState();
 }
 
-class _DetailPageState extends State<DetailPage> {
+class _DetailScreenState extends State<DetailScreen> {
   late CarouselController controller;
   int currentIndex = 0;
 

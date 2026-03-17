@@ -1,203 +1,239 @@
-import 'package:field_fox/shared/themes/theme.dart';
+import 'package:field_fox/routes/route.dart';
 import 'package:field_fox/ui/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        children: [
-          const SizedBox(
-            height: 32,
-          ),
-          Text(
-            'Halo,',
-            style: blackTextStyle.copyWith(
-              fontSize: 36,
-              fontWeight: semiBold,
-            ),
-          ),
-          Text(
-            'Selamat',
-            style: primaryTextStyle.copyWith(
-              fontSize: 36,
-              fontWeight: semiBold,
-            ),
-          ),
-          Text(
-            'Datang',
-            style: primaryTextStyle.copyWith(
-              fontSize: 36,
-              fontWeight: semiBold,
-            ),
-          ),
-          const SizedBox(
-            height: 32,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                Icons.email,
-                color: blackColor.withOpacity(0.4),
-              ),
-              hintText: 'masukkan email kamu',
-              hintStyle: blackTextStyle.copyWith(
-                fontWeight: normal,
-                fontSize: 14,
-                color: blackColor.withOpacity(0.4),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(
-                  color: primaryColor,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                Icons.lock,
-                color: blackColor.withOpacity(0.4),
-              ),
-              suffixIcon: Icon(
-                Icons.visibility,
-                color: blackColor.withOpacity(0.4),
-                size: 18,
-              ),
-              hintText: 'masukkan password kamu',
-              hintStyle: blackTextStyle.copyWith(
-                fontWeight: normal,
-                fontSize: 14,
-                color: blackColor.withOpacity(0.4),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(
-                  color: primaryColor,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Lupa Password?',
-                  style: blackTextStyle.copyWith(
-                    fontWeight: normal,
-                    fontSize: 14,
-                    color: blackColor.withOpacity(0.4),
+              SizedBox(height: 48.h),
+
+              // HERO GREETING
+              Text(
+                'Halo,\nSelamat Datang 👋',
+                style: GoogleFonts.inter(
+                  fontSize: 32.sp,
+                  height: 1.2,
+                  fontWeight: FontWeight.w800,
+                  color: colorScheme.onSurface,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                'Masuk kembali untuk mengelola pesanan lapanganmu!',
+                style: GoogleFonts.inter(
+                  fontSize: 14.sp,
+                  color: colorScheme.onSurfaceVariant,
+                ),
+              ),
+              SizedBox(height: 40.h),
+
+              // EMAIL INPUT
+              _buildModernTextField(
+                context: context,
+                hint: 'Masukkan email kamu',
+                icon: Icons.email_outlined,
+              ),
+              SizedBox(height: 16.h),
+
+              // PASSWORD INPUT
+              _buildModernTextField(
+                context: context,
+                hint: 'Masukkan password kamu',
+                icon: Icons.lock_outline_rounded,
+                isPassword: true,
+              ),
+              SizedBox(height: 12.h),
+
+              // FORGOT PASSWORD
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: Text(
+                    'Lupa Password?',
+                    style: GoogleFonts.inter(
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w600,
+                      color: colorScheme.primary,
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
-          const SizedBox(
-            height: 22,
-          ),
-          PrimaryButton(
-            title: 'Login',
-            onTap: () {},
-          ),
-          const SizedBox(
-            height: 22,
-          ),
-          Center(
-            child: Text(
-              'Atau login menggunakan',
-              style: blackTextStyle.copyWith(
-                fontWeight: normal,
-                fontSize: 14,
-                color: blackColor.withOpacity(0.4),
+              SizedBox(height: 32.h),
+
+              // LOGIN BUTTON
+              PrimaryButton(
+                title: 'Login',
+                onTap: () {
+                  context.pushNamed(RouteName.main);
+                },
               ),
-            ),
-          ),
-          const SizedBox(
-            height: 22,
-          ),
-          InkWell(
-            onTap: () {},
-            child: Container(
-              height: 52,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: blackColor.withOpacity(0.4),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              SizedBox(height: 24.h),
+
+              // OR DIVIDER
+              Row(
                 children: [
-                  Image.asset(
-                    'assets/ic_google.png',
-                    width: 24,
-                    height: 24,
+                  Expanded(
+                    child: Divider(
+                      color: colorScheme.outlineVariant,
+                      thickness: 1,
+                    ),
                   ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text('Google',
-                      style: blackTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: bold,
-                        color: blackColor.withOpacity(0.4),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: Text(
+                      'Atau login dengan',
+                      style: GoogleFonts.inter(
+                        fontSize: 12.sp,
+                        color: colorScheme.onSurfaceVariant,
                       ),
-                      textAlign: TextAlign.center),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      color: colorScheme.outlineVariant,
+                      thickness: 1,
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Belum punya akun? ',
-                style: blackTextStyle.copyWith(
-                  fontWeight: normal,
-                  fontSize: 14,
-                  color: blackColor.withOpacity(0.4),
-                ),
-              ),
-              GestureDetector(
+              SizedBox(height: 24.h),
+
+              // GOOGLE BUTTON
+              InkWell(
                 onTap: () {},
-                child: Text(
-                  'Daftar',
-                  style: primaryTextStyle.copyWith(
-                    fontWeight: semiBold,
-                    fontSize: 14,
+                borderRadius: BorderRadius.circular(16.r),
+                child: Container(
+                  height: 52.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(16.r),
+                    border: Border.all(
+                      color: colorScheme.outlineVariant,
+                      width: 1.5,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/ic_google.png',
+                        width: 24.w,
+                        height: 24.w,
+                      ),
+                      SizedBox(width: 12.w),
+                      Text(
+                        'Google',
+                        style: GoogleFonts.inter(
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w600,
+                          color: colorScheme.onSurface,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 179,
+              SizedBox(height: 40.h),
+
+              // REGISTER TEXT
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Belum punya akun? ',
+                    style: GoogleFonts.inter(
+                      fontSize: 14.sp,
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      'Daftar',
+                      style: GoogleFonts.inter(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                ],
               ),
+              SizedBox(height: 20.h),
             ],
-          )
-        ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildModernTextField({
+    required BuildContext context,
+    required String hint,
+    required IconData icon,
+    bool isPassword = false,
+  }) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return TextField(
+      obscureText: isPassword,
+      style: GoogleFonts.inter(
+        fontSize: 14.sp,
+        color: colorScheme.onSurface,
+      ),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+        prefixIcon: Icon(
+          icon,
+          color: colorScheme.onSurfaceVariant,
+          size: 20.sp,
+        ),
+        suffixIcon: isPassword
+            ? Icon(
+                Icons.visibility_off_outlined,
+                color: colorScheme.onSurfaceVariant,
+                size: 20.sp,
+              )
+            : null,
+        hintText: hint,
+        hintStyle: GoogleFonts.inter(
+          fontSize: 14.sp,
+          color: colorScheme.onSurfaceVariant,
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 16.h),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(
+            color: colorScheme.primary,
+            width: 1.5,
+          ),
+        ),
       ),
     );
   }

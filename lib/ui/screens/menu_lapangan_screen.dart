@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class MenuLapanganPage extends StatelessWidget {
-  const MenuLapanganPage({super.key});
+class MenuLapanganScreen extends StatelessWidget {
+  const MenuLapanganScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class MenuLapanganPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
+                            color: Colors.grey.withValues(alpha: 0.5),
                             spreadRadius: 1,
                             blurRadius: 1,
                             offset: Offset(0, 1),

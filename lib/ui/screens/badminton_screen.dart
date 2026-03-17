@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+class BadmintonScreen extends StatelessWidget {
+  const BadmintonScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ChatPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: Offset(0, 1),
@@ -41,13 +41,24 @@ class ChatPage extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
-          'Chat',
-          style: TextStyle(color: Colors.black),
+        title: Row(
+          children: [
+            Text(
+              'Lapangan',
+              style: TextStyle(color: Colors.black),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Badminton',
+              style: TextStyle(color: Color(0xFFF58235)),
+            ),
+          ],
         ),
       ),
       body: Center(
-        child: Text('Chat Page'),
+        child: Text('Badminton Page'),
       ),
     );
   }

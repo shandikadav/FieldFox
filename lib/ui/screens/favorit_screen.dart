@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BasketPage extends StatelessWidget {
-  const BasketPage({super.key});
+class FavoriteScreen extends StatelessWidget {
+  const FavoriteScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BasketPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: Offset(0, 1),
@@ -41,24 +41,13 @@ class BasketPage extends StatelessWidget {
             ),
           ),
         ),
-        title: Row(
-          children: [
-            Text(
-              'Lapangan',
-              style: TextStyle(color: Colors.black),
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              'Basket',
-              style: TextStyle(color: Color(0xFFF58235)),
-            ),
-          ],
+        title: Text(
+          'Favorit',
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body: Center(
-        child: Text('Basket Page'),
+        child: Text('Favorite Page'),
       ),
     );
   }

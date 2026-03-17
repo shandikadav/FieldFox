@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class KomunitasPage extends StatelessWidget {
-  const KomunitasPage({super.key});
+class FutsalScreen extends StatelessWidget {
+  const FutsalScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class KomunitasPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: Offset(0, 1),
@@ -41,13 +41,24 @@ class KomunitasPage extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(
-          'Komunitas',
-          style: TextStyle(color: Colors.black),
+        title: Row(
+          children: [
+            Text(
+              'Lapangan',
+              style: TextStyle(color: Colors.black),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Text(
+              'Futsal',
+              style: TextStyle(color: Color(0xFFF58235)),
+            ),
+          ],
         ),
       ),
       body: Center(
-        child: Text('Komunitas Page'),
+        child: Text('Futsal Page'),
       ),
     );
   }

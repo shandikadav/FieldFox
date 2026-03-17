@@ -1,15 +1,15 @@
-// import 'package:field_fox/pages/main_page.dart';
+// import 'package:field_fox/pages/main_screen.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
-// class RegisterPage extends StatefulWidget {
-//   const RegisterPage({super.key});
+// class RegisterScreen extends StatefulWidget {
+//   const RegisterScreen({super.key});
 
 //   @override
-//   State<RegisterPage> createState() => _RegisterPageState();
+//   State<RegisterScreen> createState() => _RegisterScreenState();
 // }
 
-// class _RegisterPageState extends State<RegisterPage> {
+// class _RegisterScreenState extends State<RegisterScreen> {
 //   // status show password
 //   bool _isPasswordObscure = true;
 //   bool _isPasswordConfirmationObscure = true;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RenangPage extends StatelessWidget {
-  const RenangPage({super.key});
+class RenangScreen extends StatelessWidget {
+  const RenangScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class RenangPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
+                    color: Colors.grey.withValues(alpha: 0.5),
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: Offset(0, 1),
